@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh_cn">
+	<head>
+		<meta charset="utf-8" />
+		<title>Make Use of Git [Git Basic/check commit log]</title>
+		<script type="text/javascript">
+		</script>
+	</head>
+
+	<body>
+		<h1>查看提交历史[<a href="../index.html">返回</a>]</h1>
+		<div style="width: 1000px;">
+			<img style="float: right;" src="pic9.png" />
+			<p><b>$git log [options]</b></p>
+			<p>没有选项默认打印所有的提交历史</p>
+			<h2>常用选项</h2>
+			<p><b>$git log -p -2</b></p>
+			<p>-p选项会打印每次提交的差异</p>
+			<p>-n，n为数字，最多打印最近n条提交历史</p>
+			<p><b>$git log --pretty=oneline</b></p>
+			<p>每个提交历史只显示一行</p>
+			<p>还有short, full, fuller等可以用</p>
+			<p><b>$git log --pretty=format:"%h %s"</b></p>
+			<p>格式化提交历史输出，这个指令可以方便变成提取分析</p>
+			<p><b>$git log --since="&lt;time-string&gt;" --until="&lt;time-string&gt;"</b></p>
+			<p><b>         --before="&lt;time-string&gt;" --after="&lt;time-string&gt;"</b></p>
+			<p>可以给出各种时间格式，例如："2013-01-07"，"2 years 1 day 3 minutes ago"</p>
+			<p><b>$git log --grep="&lt;grep-string&gt;"</b></p>
+			<p>grep提交说明字符串</p>
+			<p><b>$git log -- &lt;file_or_dir&gt;</b></p>
+			<p>只显示针对指定文件与目录下文件的更新提交历史</p>
+			<!--
+			<img style="float: right;" src="obj_inherit.png" />
+			<h3>寄生组合式继承模式(如右图所示)</h3>
+			<p>继承模式主要采用原型链的方式</p>
+			<p>组合式：组合了构造函数模式和原型模式</p>
+			<p>寄生：创建一个仅用于封装继承过程的函数，该函数在内部以某种方式来增强对象</p>
+			<p>点击查看代码：<a href="obj_inherit.js">obj_inherit.js</a></p>
+			-->
+		</div>
+	</body>
+</html>

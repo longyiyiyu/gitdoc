@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh_cn">
+	<head>
+		<meta charset="utf-8" />
+		<title>Make Use of Git [Git Basic/repeal operations]</title>
+		<script type="text/javascript">
+		</script>
+	</head>
+
+	<body>
+		<h1>撤销操作[<a href="../index.html">返回</a>]</h1>
+		<div style="width: 800px;">
+			<img style="float: right;" src="pic10.png" />
+			<img style="float: right;" src="pic11.png" />
+			<h2>修改最后一次提交</h2>
+			<p><b>$git commit --amend</b></p>
+			<p>这次提交将覆盖上一次提交</p>
+			<h2>取消已暂存文件</h2>
+			<p><b>$git reset HEAD &lt;file&gt;</b></p>
+			<h2>取消对文件的修改</h2>
+			<p><b>$git checkout -- &lt;file&gt;</b></p>
+			<p><b>这条指令小心使用！取消之后不能恢复！</b></p>
+			<p><b>这里的修改是指让文件状态转变为[已更新]状态的更新内容</b></p>
+			<!--
+			<img style="float: right;" src="obj_inherit.png" />
+			<h3>寄生组合式继承模式(如右图所示)</h3>
+			<p>继承模式主要采用原型链的方式</p>
+			<p>组合式：组合了构造函数模式和原型模式</p>
+			<p>寄生：创建一个仅用于封装继承过程的函数，该函数在内部以某种方式来增强对象</p>
+			<p>点击查看代码：<a href="obj_inherit.js">obj_inherit.js</a></p>
+			-->
+		</div>
+	</body>
+</html>

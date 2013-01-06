@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh_cn">
+	<head>
+		<meta charset="utf-8" />
+		<title>Make Use of Git [Romote Repository/use remote repository]</title>
+		<script type="text/javascript">
+		</script>
+	</head>
+
+	<body>
+		<h1>使用远程仓库[<a href="../index.html">返回</a>]</h1>
+		<div style="width: 800px;">
+			<h2>罗列远程仓库</h2>
+			<p><b>$git remote</b></p>
+			<p>列出所有配置的远程仓库，其中origin是当初的克隆源仓库</p>
+			<p>加上-v选项可以查看远程仓库的url</p>
+			<h2>添加远程仓库</h2>
+			<p><b>$git remote add &lt;shortname&gt; &lt;url&gt;</b></p>
+			<p>添加远程仓库的意义仅仅是添加一个助记的url</p>
+			<p>然后就可以用shortname替代url使用</p>
+			<h2>从远程仓库抓取数据</h2>
+			<p><b>$git fetch &lt;remote-name&gt;</b></p>
+			<p>remote-name用于区别</p>
+			<p>上述指令只把本地仓库没有的数据抓取到本地</p>
+			<p>抓取下来之后，不会自动合并，如果要自动合并，如下：</p>
+			<p><b>$git pull &lt;remote-name&gt;</b></p>
+			<h2>推送数据到远程仓库</h2>
+			<p><b>$git push &lt;remote-name&gt; &lt;branch-name&gt;</b></p>
+			<p>把本地的branch-name分支推送到远程仓库remote-name</p>
+			<h2>查看远程仓库的信息</h2>
+			<p><b>$git remote show &lt;remote-name&gt;</b></p>
+			<p>查看远程仓库的信息，包括：</p>
+			<ul>
+				<li>克隆地址</li>
+				<li>处于跟踪状态的分支</li>
+				<li>未跟踪的分支，即还没有同步到本地仓库的分支</li>
+				<li>已经同步到本地，但远程仓库已经删除了的分支</li>
+				<li>git push缺省推送的分支</li>
+				<li>git pull缺省合并的分支</li>
+			</ul>
+			<h2>重命名远程仓库</h2>
+			<p><b>$git remote rename &lt;remote-name&gt; &lt;new-name&gt;</b></p>
+			<h2>删除远程仓库</h2>
+			<p><b>$git remote rm &lt;remote-name&gt;</b></p>
+			<!--
+			<img style="float: right;" src="obj_inherit.png" />
+			<h3>寄生组合式继承模式(如右图所示)</h3>
+			<p>继承模式主要采用原型链的方式</p>
+			<p>组合式：组合了构造函数模式和原型模式</p>
+			<p>寄生：创建一个仅用于封装继承过程的函数，该函数在内部以某种方式来增强对象</p>
+			<p>点击查看代码：<a href="obj_inherit.js">obj_inherit.js</a></p>
+			-->
+		</div>
+	</body>
+</html>
