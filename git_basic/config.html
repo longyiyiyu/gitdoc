@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh_cn">
+	<head>
+		<meta charset="utf-8" />
+		<title>Make Use of Git [Git Basic/git configurations]</title>
+		<script type="text/javascript">
+		</script>
+	</head>
+
+	<body>
+		<h1>git配置[<a href="../index.html">返回</a>]</h1>
+		<p>只需要做这些设置一次；即使你升级了，它们也会绑定到你的环境中。你也可以在任何时刻通过运行命令来重新更改这些设置。</p>
+		<p>Git有一个工具被称为git config，它允许你获得和设置配置变量；这些变量可以控制Git的外观和操作的各个方面。</p>
+		<ul>
+			<li>这些变量可以被存储在三个不同的位置：
+			<ul>
+				<li>/etc/gitconfig 文件：包含了适用于系统所有用户和所有库的值。如果你传递参数选项’--system’ 给 git config，它将明确的读和写这个文件。</li>
+				<li>~/.gitconfig 文件 ：具体到你的用户。你可以通过传递--global 选项使Git 读或写这个特定的文件。</li>
+				<li>位于git目录的config文件 (也就是 .git/config) ：无论你当前在用的库是什么，特定指向该单一的库。</li>
+			</ul>
+			<li>每个级别重写前一个级别的值。因此，在.git/config中的值覆盖了在/etc/gitconfig中的同一个值。</li>
+			<li>在Windows系统中，Git在$HOME目录中查找.gitconfig文件（对大多数人来说，位于C:\Documents and Settings\$USER下）。它也会查找/etc/gitconfig，尽管它是相对于Msys 根目录的。这可能是你在Windows中运行安装程序时决定安装Git的任何地方。</li>
+		</ul>
+		<div style="width: 800px;">
+			<h2>你的标识</h2>
+			<p><b>$git config --global user.name "long"</b></p>
+			<p><b>$git config --global user.email "long@xxx.com"</b></p>
+			<p>重申一遍，你只需要做一次这个设置。如果你传递了 --global 选项，因为Git将总是会使用该信息来处理你在系统中所做的一切操作。如果你希望在一个特定的项目中使用不同的名称或e-mail地址，你可以在该项目中运行该命令而不要--global选项。</p>
+			<h2>配置代理</h2>
+			<p><b>$git config --global http.proxy http://my.proxy.com:8080</b></p>
+			<h2>你的编辑器</h2>
+			<p><b>$git config --global core.editor emacs</b></p>
+			<p>Git在需要你输入一些消息时会使用该文本编辑器。缺省情况下，Git使用你的系统的缺省编辑器，这通常可能是vi或者vim。</p>
+			<h2>你的比较工具</h2>
+			<p><b>$git config --global merge.tool vimdiff</b></p>
+			<p>Git可以接受kdiff3, tkdiff, meld, xxdiff, emerge, vimdiff, gvimdiff, ecmerge, 和 opendiff作为有效的合并工具。你也可以设置一个客户化的工具；</p>
+			<h2>使用命令别名</h2>
+			<p><b>$git config --system alias.st status</b></p>
+			<p><b>$git config --system alias.ci commit</b></p>
+			<p><b>$git config --system alias.co checkout</b></p>
+			<p><b>$git config --system alias.br branch</b></p>
+			<p>可以设置任何别名（只要不冲突）</p>
+			<h2>默认push设置</h2>
+			<p><b>$git config --global push.default &lt;option&gt;</b></p>
+			<p>1.6.3之后的版本使用git push命令时会使用这个配置项执行相应动作，如果没有，它将会有提示，并默认push所有的分支到远程仓库</p>
+			<ul>option有以下选项
+				<li>nothing -- 不会push</li>
+				<li>matching -- push所有远程仓库同名的branch</li>
+				<li>upstream -- push当前分支到与pull同步的远程仓库上</li>
+				<li>simple -- 和upstream一样，但是只会push远程仓库有同名的分支，如果不同名，则会被拒绝，这是最安全的一个选项，一般配置这个选项</li>
+				<li>current -- push当前分支</li>
+			</ul>
+			<p><a href="http://www.tcreator.info/webSchool/itTopics/git-config-push-default-matching.html" target="_blank">资料</a></p>
+			<h2>检查你的配置</h2>
+			<p><b>$git config --list</b></p>
+			<p>列出所有的配置项</p>
+			<p>可能会看到一个关键字出现多次，这是因为Git从不同的文件中(例如：/etc/gitconfig以及~/.gitconfig)读取相同的关键字。 在这种情况下，对每个唯一的关键字，Git使用最后的那个值。</p>
+			<p><b>$git config &lt;config-key&gt;</b></p>
+			<p>查看Git认定的一个特定的关键字目前的值</p>
+		</div>
+	</body>
+</html>
